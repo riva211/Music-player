@@ -31,7 +31,7 @@ Before you begin, ensure you have the following installed:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/music-player.git
+git clone https://github.com/riva211/music-player.git
 cd music-player
 ```
 
