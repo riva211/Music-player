@@ -1,0 +1,128 @@
+@import '~bootstrap/scss/bootstrap';
+
+// Override Bootstrap popover styles
+.popover {
+  --bs-popover-bg: #121212;
+  --bs-popover-border-color: rgba(255, 255, 255, 0.1);
+  --bs-popover-header-bg: #1a1a1a;
+  --bs-popover-header-color: #fff;
+  --bs-popover-body-color: #fff;
+  --bs-popover-arrow-color: #121212;
+  --bs-popover-arrow-outer-color: rgba(255, 255, 255, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+  background-color: #0a0e14;
+  overflow-x: hidden;
+}
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to bottom, #0f1722, #0a0e14);
+}
+
+.sidebar-container {
+  height: 100vh;
+  overflow-y: auto;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+
+  @media (max-width: 576px) {
+    height: auto;
+    min-height: 60px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+}
+
+.main-area {
+  height: 100vh;
+
+  @media (max-width: 768px) {
+    height: auto;
+  }
+
+  .row {
+    @media (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+.content-container {
+  height: 100vh;
+  overflow-y: auto;
+  padding: 0;
+
+  @media (max-width: 768px) {
+    height: auto;
+    order: 2; // Show content below player on mobile
+    padding-bottom: 20px;
+  }
+}
+
+.now-playing-container {
+  height: 100vh;
+  overflow-y: auto;
+  padding: 0;
+  border-left: 1px solid rgba(255, 255, 255, 0.05);
+
+  @media (max-width: 768px) {
+    height: auto;
+    min-height: 210px;
+    order: 1; // Show player above content on mobile
+    background-color: rgba(0, 0, 0, 0.9);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: none;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.slide-up {
+  animation: slideUp 0.3s ease-in-out;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+

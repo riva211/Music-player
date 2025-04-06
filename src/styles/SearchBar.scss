@@ -1,0 +1,33 @@
+.search-bar {
+  margin-bottom: 20px;
+  max-width: 300px;
+  
+  .input-group {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    overflow: hidden;
+    
+    .input-group-text {
+      background-color: transparent;
+      border: none;
+      color: #b3b3b3;
+    }
+    
+    .form-control {
+      background-color: transparent;
+      border: none;
+      color: #fff;
+      font-size: 13px;
+      
+      &::placeholder {
+        color: #b3b3b3;
+      }
+      
+      &:focus {
+        box-shadow: none;
+        background-color: transparent;
+      }
+    }
+  }
+}
+
